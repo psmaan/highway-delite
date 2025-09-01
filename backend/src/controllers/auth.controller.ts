@@ -137,7 +137,10 @@ export async function verifyLoginOtp(req: Request, res: Response, next: NextFunc
     });
 
     res.json({
-      user: payload,
+      user: {
+        name: user.name,
+        email: user.email,
+      },
       accessToken: access,
       refreshToken: refresh
     });
