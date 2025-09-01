@@ -88,8 +88,6 @@ export default function Dashboard() {
 
             <div className="">
               <h1
-                
-                fullWidth 
                 onClick={handleLogout}
                 className="text-blue-500 underline cursor-pointer"
               >
