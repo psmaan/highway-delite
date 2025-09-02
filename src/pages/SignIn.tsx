@@ -52,7 +52,7 @@ export default function SignIn() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/login/request-otp",
+        `${process.env.REACT_APP_API_URL}/auth/login/request-otp`,
         { email },
         { withCredentials: true }
       );
@@ -73,7 +73,7 @@ export default function SignIn() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login/verify",
+        `${process.env.REACT_APP_API_URL}/auth/login/verify`,
         { email, otp },
         { withCredentials: true }
       );

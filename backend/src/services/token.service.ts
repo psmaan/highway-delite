@@ -8,11 +8,15 @@ export interface JwtPayload {
 }
 
 export function signAccessToken(payload: JwtPayload) {
-  return jwt.sign(payload, env.JWT_SECRET, { expiresIn: env.JWT_EXPIRES_IN });
+  return jwt.sign(payload, env.JWT_SECRET, { 
+    expiresIn: env.JWT_EXPIRES_IN 
+  } as jwt.SignOptions); // Add type assertion
 }
 
 export function signRefreshToken(payload: JwtPayload) {
-  return jwt.sign(payload, env.REFRESH_SECRET, { expiresIn: env.REFRESH_EXPIRES_IN });
+  return jwt.sign(payload, env.REFRESH_SECRET, { 
+    expiresIn: env.REFRESH_EXPIRES_IN 
+  } as jwt.SignOptions); // Add type assertion
 }
 
 export function verifyAccessToken(token: string) {

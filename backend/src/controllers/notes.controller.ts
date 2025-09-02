@@ -1,6 +1,6 @@
 import express from 'express';
 import type { Request, Response, NextFunction } from "express";
-import { Note } from "../models/note.ts";
+import { Note } from "../models/Note.ts";
 import { AppError } from "../utils/errors.ts";
 
 // Get all notes for logged-in user

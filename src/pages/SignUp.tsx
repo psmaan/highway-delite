@@ -54,7 +54,7 @@ export default function SignUp() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/signup/request-otp",
+        `${process.env.REACT_APP_API_URL}/auth/signup/request-otp`,
         { name, dob, email },
         { withCredentials: true }
       );
@@ -75,7 +75,7 @@ export default function SignUp() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/signup/verify",
+        `${process.env.REACT_APP_API_URL}/auth/signup/verify`,
         { email, otp },
         { withCredentials: true }
       );
